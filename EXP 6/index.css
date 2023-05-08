@@ -1,0 +1,25 @@
+.container {
+    margin-left: 40%;
+    margin-top: 15%;
+    background-color: #ededed;
+    border: 2px solid black;
+    padding: -77px 64px;
+    width: 428px;
+}
+.formgroup input {
+    text-align: center;
+    display: block;
+    width: 381px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 11px auto;
+    font-size: 19px;
+    border-radius: 15px;
+}
+.container h1 {
+    text-align: center;
+}
+body{
+    background-color:#ededed;
+}
+
