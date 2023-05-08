@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mathematical Operations</h1>
+        <div class="input-values">
+            <label for="firstnumber">First Number:</label><br>
+            <input type="text" id="firstnumber" placeholder="Enter First Number"><br>
+            <label for="secondnumber">Second Number:</label><br>
+            <input type="text" id="secondnumber" placeholder="Enter Second Number"><br>
+            <label for="result">Result:</label><br>
+            <input type="text" id="result"><br>
+        </div>
+        <div class="op-buttons">
+            <button id="addition" value="Addition" onclick="addNumber()">Addition</button>
+            <button id="subtraction" value="Subtraction" onclick="subNumber()">Subtraction</button>
+            <button id="multiplication" value="Multiplication" onclick="mulNumber()">Multiplication</button>
+            <button id="division" value="Division" onclick="divNumber()">Division</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
