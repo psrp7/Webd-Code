@@ -1,0 +1,29 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "bs";
+
+$conn = mysqli_connect($servername, $username, $password, $bs);
+if (!$conn){
+    die("Sorry we failed to connect: ". mysqli_connect_error());
+}
+else{
+    echo "Connection was successful<br>";
+}
+
+$name = "Vikrant";
+$destination = "Russia";
+
+$sql = "INSERT INTO `by2` (`sn2`, `name2`) VALUES ('88', 'sddd');"
+
+$result = mysqli_query($conn, $sql);
+
+if($result){
+    echo "The record has been inserted successfully successfully!<br>";
+}
+else{
+    echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
+}
+?>
