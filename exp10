@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $database = "bs";
 
-$conn = mysqli_connect($servername, $username, $password, $bs);
+$conn = mysqli_connect($servername, $username, $password,$database);
 if (!$conn){
     die("Sorry we failed to connect: ". mysqli_connect_error());
 }
@@ -13,10 +13,10 @@ else{
     echo "Connection was successful<br>";
 }
 
-$name = "Vikrant";
-$destination = "Russia";
+$name = 'Vikrant';
+$sn = 34;
 
-$sql = "INSERT INTO `by2` (`sn2`, `name2`) VALUES ('88', 'sddd');"
+$sql = "INSERT INTO by2 (sn2, name2) VALUES ('sn', '$name')";
 
 $result = mysqli_query($conn, $sql);
 
