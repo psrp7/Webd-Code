@@ -1,0 +1,91 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title>its my resume</title>
+    </head>
+<script src="https://kit.fontawesome.com/45513e205e.js"crossorigin="anonymous"> </script>
+        <style>
+           .container {
+                display: flex;
+            }
+
+            .image {
+                max-width: 100%;
+                max-height:100%;
+                margin-top: 40px;
+                 
+            }
+
+            .content {
+                font-size: 20px;
+                padding-left: 50px;
+                
+                }  
+              
+         
+        </style>
+   <body>
+        <div class="container">
+            <div class="image">
+                <img src="https://cdn2.vectorstock.com/i/1000x1000/10/81/business-woman-profile-with-red-blouse-cartoon-vector-9651081.jpg" width="150px" height="140px">
+            </div>
+        
+            <div class="content">
+                <h3>Trupti Thorat</h3>
+                <p>passionate about learning technology </br>and exploring new possibilities</p>
+                <ul>
+                    <li><a href="mailto:"thorattrupti@gmail.com?subject="hellow world">contact.us</a></li>
+
+                </ul>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                </ul>
+                </div>
+            </div>
+            <div>
+                <h3><u>Skills</u></h3>
+                <ul>
+                    <li>HTML,CSS</li>   
+                    <li>JAVA</li> 
+                    <li>SQL,Database</li>             
+                </ul>
+
+            </div>
+                <table border="1" height="100px"width="500px" cellpadding="0px" cellspacing="0px" >
+                    <h3><u>Education</br></u></h3>
+                    <th>Collage</th>
+                    <th>Degree</th>
+                    <th>Percentage</th>
+                    <tr>
+                        <td>P.D.V.P.Collage Tasgaon</td>
+                        <td>XII</td>
+                        <td>70%</td>
+                    </tr>
+                    <tr>
+                        <td>D.K.T.E.Ichalkaranji</td>
+                        <td>Computer Science And Engineering</td>
+                        <td>7.91 CGPA</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3><u>Project Work</u></h3>
+                <p><b>Edge Detection Through Computer Vision</b></p>
+                <p> Edge detection is a very important task in the field of computer vision.</br> 
+                    It is the very first step for many of the pure computer vision tasks,</br> 
+                    such as contour detection. Even when it comes to deep learning,</br>  
+                    the deeper layers first learn to recognize the edges before learning the complicated features of an image.</br> 
+                    So, we can say that edge detection is pretty important in the field of computer vision.</br> 
+                    And having good and efficient algorithms for edge detection in images is just  as important</br> 
+                </p>
+
+            </div>
+            <div>
+                <h3><u>Hobbies</u></h3>
+                <ul>
+                    <li>Sketching</li>
+                    <li>Learn New Things</li>
+                </ul>
+            </div>
+    </body>
+</html>
