@@ -1,29 +1,61 @@
-<?php
+<html>
+<body>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  Rollno: <input type="text" name="rollno" /><br>
+  T.Y.B.Tech (CSE)- II Subject: Web Technologies<br>
+  Name: <input type="text" name="name" /><br>
+  Class: <input type="text" name="class" /><br>
+  <input type="submit" />
+</form>
+</body>
+</html>
 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "bs";
+$database = "db_new";
 
-$conn = mysqli_connect($servername, $username, $password,$database);
+$conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn){
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-}
-else{
+    die("Sorry, we failed to connect: " . mysqli_connect_error());
+} else {
     echo "Connection was successful<br>";
 }
 
-$name = 'Vikrant';
-$sn = 34;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])==true  && isset($_POST['class']) && isset($_POST['rollno'])) {
+   
+        $name = $_POST['name'];
+        $class = $_POST['class'];
+        $rollno = $_POST['rollno'];
 
-$sql = "INSERT INTO by2 (sn2, name2) VALUES ('sn', '$name')";
+        $sql = "INSERT INTO cse (rollno, name, class) VALUES ('$rollno', '$name', '$class')";
 
-$result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
-if($result){
-    echo "The record has been inserted successfully successfully!<br>";
-}
-else{
-    echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
-}
+        if ($result) {
+            if(!empty($_POST['name']))
+            echo "The record has been inserted successfully!<br>";
+
+            $selectSql = "SELECT * FROM cse WHERE rollno = '$rollno'";
+            $selectResult = mysqli_query($conn, $selectSql);
+
+            if ($selectResult && mysqli_num_rows($selectResult) > 0) {
+                $row = mysqli_fetch_assoc($selectResult);
+                echo "Inserted Record:<br>";
+                echo "Rollno: " . $row['rollno'] . "<br>";
+                echo "Name: " . $row['name'] . "<br>";
+                echo "Class: " . $row['class'] . "<br>";
+            } else {
+                echo "Failed to retrieve the inserted record.";
+            }
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    } 
+    else {
+        echo "Please insert some data";
+    }
+    
+
 ?>
