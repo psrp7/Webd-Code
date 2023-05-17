@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Php Session </title>
+</head>
+
+<style>
+   .main{
+    background-color:blue
+   } 
+
+   .form_data{
+    padding:4em;
+    margin-left:30%;
+   }
+</style>
+<body>
+<div class="form_data">
+     <h2>Welcome to our page sir </h2>
+
+
+</div>
+<div class ="main">
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    echo "Welcome ". $_SESSION['username']; 
+    echo "<br>";
+    echo "<br> Your favorite book  is ". $_SESSION['book'];
+    echo "<br>";
+}
+else{
+    echo "Please login to continue";
+}
+?>
+</div>
+
+</body>
+</html>
+
+
+//2
+
+<?php
+
+session_start();
+$_SESSION['username'] = "psrp";
+$_SESSION['book'] = "Java";
+echo "Succesfully login ";
+?>
+
+//3
+<?php
+
+session_start();
+session_unset();
+session_destroy();
+echo "<br> You have been logged out";
+?>
