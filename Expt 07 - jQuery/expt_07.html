@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- AJAX - Asynchoronous Javascript and XML -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h3>First Paragraph</h3>
+    <p class="first">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde facere, ipsum nemo ut laborum
+        numquam cupiditate
+        minus culpa dolores aliquid hic! Rerum, eaque dolorem facere vitae molestias ad magnam, consectetur quas
+        tenetur, nostrum accusantium. Ducimus!</p>
+    <h3>Second Paragraph</h3>
+    <p class="second">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, deleniti, excepturi
+        pariatur, illo harum
+        quia praesentium provident nostrum placeat velit assumenda ipsam molestias. Ut ad repellendus quibusdam, totam
+        ab odio. Earum maiores saepe architecto fugiat.</p>
+    <h3>ThridParagraph</h3>
+    <p class="third">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus amet laboriosam cupiditate
+        possimus ratione
+        voluptatum, debitis consectetur beatae molestias magni obcaecati modi, esse, ex dolorum aliquid. Doloribus
+        voluptatem assumenda fuga?</p>
+
+    <button class="btn-first-hide">Hide Paragraph 1</button>
+    <button class="btn-first-show">Show Paragraph 1</button>
+    <br>
+    <button class="btn-sec-fadein">FadeIN Paragraph 2</button>
+    <button class="btn-sec-fadeout">FadeOUT Paragraph 2</button>
+    <button class="btn-sec-fadetog">FadeTOGGLE Paragraph 2</button>
+    <br>
+    <button class="btn-thr-slideup">SlideUP Paragraph 3</button>
+    <button class="btn-thr-slidedown">SlideOUT Paragraph 3</button>
+    <button class="btn-thr-slidetog">SlideTOGGLE Paragraph 3</button>
+
+    <!-- AJAX -->
+    <h1>AJAX</h1>
+    <h3>This paragraph is going to get changed using AJAX..</h3>
+    <p class="ajax">Lorem ipsum dolor sit amet consectetur adipisicing elit. At rem perferendis iusto nam, officiis
+        fugiat dolorem
+        quaerat voluptatem enim eligendi nesciunt nihil ullam eveniet magni sunt labore voluptatum perspiciatis odio.
+    </p>
+    <button class="change-ajax">Change AJAX text</button>
+
+    <h3>GET method</h3>
+    <p class="get-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat delectus ullam velit aliquid hic,
+        commodi ab optio et vel culpa qui illo adipisci vitae aliquam possimus cumque cupiditate tenetur quo!</p>
+    <button class="get-ajax">GET Method</button>
+    <button class="post-ajax">POST Method</button>
+
+    <script>
+        // hiding the first paragraph
+        $("button.btn-first-hide").click(function () {
+            $(".first").hide(1000);
+        });
+
+        // displaying the first paragraph
+        $("button.btn-first-show").click(function () {
+            $("p.first").show(1000);
+        })
+
+        // fadeout second para
+        $("button.btn-sec-fadeout").click(function () {
+            $("p.second").fadeOut(1000);
+        })
+
+        // fadein second para
+        $("button.btn-sec-fadein").click(function () {
+            $("p.second").fadeIn(1000);
+        })
+
+        // fadetoggle second para
+        $("button.btn-sec-fadetog").click(function () {
+            $("p.second").fadeToggle("slow");
+        })
+
+        // slideup thrid para
+        $("button.btn-thr-slideup").click(function () {
+            $("p.third").slideUp(1000);
+        })
+
+        // slideout thrid para
+        $("button.btn-thr-slidedown").click(function () {
+            $("p.third").slideDown(1000);
+        })
+
+        // slidein thrid para
+        $("button.btn-thr-slidetog").click(function () {
+            $("p.third").slideToggle(1000);
+        })
+
+        // loading the ajax text content wihtout reloading the page
+        $("button.change-ajax").click(function () {
+            $("p.ajax").load("ajax.txt");
+        })
+
+        // get method 
+        $("button.get-ajax").click(function () {
+            $.get("demo.asp", function (data, status) {
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+
+        // post method
+        $(".post-ajax").click(function () {
+        var postData = {
+            name: "Donald Duck",
+            city: "Duckburg"
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/demo_test_post.asp",
+            data: postData,
+            success: function (data) {
+                alert("Data: " + data);
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText);
+                alert("An error occurred while processing the request.");
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
