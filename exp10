@@ -1,5 +1,6 @@
 <html>
 <body>
+ 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   Rollno: <input type="text" name="rollno" /><br>
   T.Y.B.Tech (CSE)- II Subject: Web Technologies<br>
@@ -14,7 +15,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "db_new";
+$database = "db_new3";
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn){
@@ -29,15 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])==true  && iss
         $class = $_POST['class'];
         $rollno = $_POST['rollno'];
 
-        $sql = "INSERT INTO cse (rollno, name, class) VALUES ('$rollno', '$name', '$class')";
+        $sql = "INSERT INTO cse3 (rollno, name, class) VALUES ('$rollno', '$name', '$class')";
 
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
             if(!empty($_POST['name']))
-            echo "The record has been inserted successfully!<br>";
+              echo "The record has been inserted successfully!<br>";
 
-            $selectSql = "SELECT * FROM cse WHERE rollno = '$rollno'";
+            $selectSql = "SELECT * FROM cse3 WHERE rollno = '$rollno'";
             $selectResult = mysqli_query($conn, $selectSql);
 
             if ($selectResult && mysqli_num_rows($selectResult) > 0) {
